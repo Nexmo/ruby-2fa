@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to :root
     else
-      redirect_to new_session_path, alert: "Login incorrect"
+      flash[:alert] = "Login incorrect"
+      render :new
     end
   end
 

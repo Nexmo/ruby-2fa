@@ -1,0 +1,19 @@
+<h1>Register</h1>
+
+<%= form_for @user, url: user_path do |f| %>
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= submit_tag 'Register' %>
+  </div>
+<% end %>
