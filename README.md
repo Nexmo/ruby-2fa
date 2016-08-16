@@ -37,14 +37,13 @@ This app shows you how to secure your app login with two-factor authentication u
 Once your server is started:
 
 * Visit [localhost:3000](http://localhost:3000/)
-* Sign up for an account
+* Register for an account
 * Add a phone number to your account without any leading 0's or +'s (e.g. `445555666777`)
 * Log out
 * Log in with your username and password
-* You will receive a code in seconds, fill this in on the second form and submit
+* You will receive a code in a few seconds, fill this in on the second form and submit
 * You will now be logged in
 
 ## License
 
 This project is licensed under the [MIT license](LICENSE).
-
