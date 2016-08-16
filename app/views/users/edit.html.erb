@@ -1,2 +1,11 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Edit user</h1>
+
+<%= form_for @user, url: user_path, method: :patch do |f| %>
+  <div class="field">
+    <%= f.label :number %>
+    <%= f.text_field :number %>
+  </div>
+  <div class="actions">
+    <%= submit_tag 'Update' %>
+  </div>
+<% end %>

@@ -15,14 +15,22 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = current_user
   end
 
   def update
+    @user = current_user
+    if @user.update_attributes(user_params)
+      redirect_to '/'
+    else
+      flash[:alert] = 'Could not update user'
+      render :new
+    end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
+    params.require(:user).permit(:username, :password, :password_confirmation, :number)
   end
 end

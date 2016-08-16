@@ -16,5 +16,16 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||=
       User.where(id: session[:user_id]).first
+  end
+
+  def ensure_verified
+    unless verified?
+      redirect_to new_verification_path
     end
+  end
+
+  def verified?
+    current_user.number.nil? ||
+      session[:verified]
+  end
 end
