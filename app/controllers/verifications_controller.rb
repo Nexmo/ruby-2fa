@@ -9,7 +9,7 @@ class VerificationsController < ApplicationController
       session[:verification_id],
       code: params[:code]
     )
-    puts response.inspect
+
     if response['status'] == '0'
       session[:verified] = true
       redirect_to :root
