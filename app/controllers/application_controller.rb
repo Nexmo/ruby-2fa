@@ -25,7 +25,6 @@ class ApplicationController < ActionController::Base
   end
 
   def verified?
-    current_user.number.nil? ||
-      session[:verified]
+    session[:verified]
   end
 end

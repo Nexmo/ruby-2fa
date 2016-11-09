@@ -38,11 +38,10 @@ Once your server is started:
 
 * Visit [localhost:3000](http://localhost:3000/)
 * Register for an account
-* Add a phone number to your account without any leading 0's or +'s (e.g. `445555666777`)
-* Log out
-* Log in with your username and password
+  * The phone number must be provided without any leading 0's or +'s (e.g. `445555666777`)
 * You will receive a code in a few seconds, fill this in on the second form and submit
-* You will now be logged in
+* You will now be registered and logged in
+* Logout and in again to see the same in action for login
 
 ## License
 
