@@ -24,9 +24,10 @@ cp .env.example .env
 Next you will need to sign up for a Nexmo account and get your API credentials from the API dashboard and put them in your `.env`
 file.
 
-Finally all that's left is to start the server.
+Finally all that's left is to migrate the database and start the server.
 
 ```sh
+rake db:migrate
 rails server
 ```
 
