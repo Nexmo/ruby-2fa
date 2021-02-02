@@ -5,12 +5,12 @@ class VerificationsController < ApplicationController
   end
 
   def create
-    response = client.check_verification(
-      session[:verification_id],
+    response = client.verify.check(
+      request_id: session[:verification_id],
       code: params[:code]
     )
 
-    if response['status'] == '0'
+    if response.status == '0'
       session[:verified] = true
       redirect_to :root
     else
@@ -22,14 +22,14 @@ class VerificationsController < ApplicationController
   private
 
   def send_verification_request
-    response = client.start_verification(
+    response = client.verify.request(
       number: current_user.number,
       brand: 'MyApp'
     )
 
-    if response['status'] == '0'
+    if response.status == '0'
       session[:verification_id] =
-        response['request_id']
+        response.request_id
     end
   end
 
